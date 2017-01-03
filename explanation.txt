@@ -1,0 +1,5 @@
+This project will consist of the creation of a simple GUI calculator made in c.
+The GUI library that will be used will be GTK+3.
+This will eventually incorporate OpenGL and by that point the calculator will be so bloated the openGL will crash the application.
+GLADE IS FORBIDDEN TO BE USED AT ALL! (unless testing is required for verification
+

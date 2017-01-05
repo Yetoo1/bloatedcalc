@@ -2,7 +2,7 @@
 Title: Bloated C Calculator
 Author: Yetoo Happy
 Contact: yetoohappy@gmail.com
-Compile with: gcc 2c-main.c $(pkg-config --clags --libs gtk+-3.0)
+Compile with: gcc 2c-main.c $(pkg-config --cflags --libs gtk+-3.0) -o 2c-main.c
 */
 //FIX THE COMMENTS!
 //#include <stdio.h>
@@ -19,7 +19,9 @@ Compile with: gcc 2c-main.c $(pkg-config --clags --libs gtk+-3.0)
 	gtk_widget_destroy(dialog); 
 }*/
 static char immediate [ARRAY_SIZE]; //holds the immediate integers inputted before a sign is recieved INCREASE TO 999999 LATER, RIGHT NOW WE ASSUME, IT IS SIMPLY TO BIG TO DEBUG RIGHT NOW
-//static char  
+//immediate[ARRAY_SIZE-1] = '\0'; //makes it possible to convert to string from the start 
+static char istring[ARRAY_SIZE]; //holds the immediate string
+static char lstring[ARRAY_SIZE]; //holds the longterm string, this string will hold the numbers and symbols which will be then converted back to their proper states and then the numbers will be manipulated with the symbol  
 static int i = 0; //shitty global variable
 static void appendint(int num)
 {	
@@ -44,10 +46,14 @@ static void appendint(int num)
 		{
 			//printf("i iteration: %d\n", i);			
 			//printf("z iteration: %d\n", z);			
-			if (z != i) //don't need to minus i here because it's always chaning before here
+			if (z != i+1) //don't need to minus i here because it's always chaning before here
 			{	
+				if ( i == ARRAY_SIZE - i)
+				{
+					immediate[i] = '\0'; //somehow make this go at the end
+				}
 				g_print("The array consists of: %d\n", immediate[z]);
-				printf ("%c", immediate[ARRAY_SIZE] = '\0');
+				printf ("%c", immediate[i]);
 				//printf (strcpy(immediate, immediate));
 				
 				

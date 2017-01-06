@@ -14,22 +14,24 @@ int main (int argc, char** argv)
 	char aswitch; //aswitch means ask switch
 	int i;
 	int y;
-	for (i = 0; i < 4; i++)
+	for (i = 0; i <= 4; i++)
 	{
 		switch(i)
 		{
-			case 0: break;
+			//case 0: break;
 			case 1: printf("+\n"); break;
 			case 2: printf("-\n"); break;
 			case 3: printf("x\n"); break;
 			case 4: printf("/\n"); break;
-			default: printf("\n");	
+			default: printf("\n"); 	
 		}
 		for (y = 0; y < 9; y++)
 		{
-			printf("%d", y); //fix this so that it returns every three or some shit	
+			printf("%d", y); //fix this so that it returns every three or some shit
+			//make another for loop so that it can be a 3 by 3 rectangle numbered 1 to 9	
 		}
 	}
+	//the text below doesn't output everything, feelig it's the switch statement
 	scanf("Enter a character on the display above: %s", ask);
 	printf("You entered: %s\n", ask);
 	return 0;

@@ -27,8 +27,11 @@ int main (int argc, char** argv)
 		}
 		for (y = 0; y < 9; y++)
 		{
-			printf("%d", y); //fix this so that it returns every three or some shit
-			//make another for loop so that it can be a 3 by 3 rectangle numbered 1 to 9	
+			printf("%d",y);
+			if (y % 3 == 0)
+			{
+				printf("\n");
+			}	
 		}
 	}
 	//the text below doesn't output everything, feelig it's the switch statement

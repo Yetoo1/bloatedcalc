@@ -9,34 +9,26 @@ Compile with: gcc 2c-main.c -o 2c-main.c
 #define ARRAY_SIZE 11
 int main (int argc, char** argv)
 {
-	//char ask[2];
-	int ask[2];
+	//int ask[10];
+	char ask;
 	char aswitch; //aswitch means ask switch
 	int i;
-	int y;
-	for (i = 0; i <= 4; i++)
+	for (i = 0; i <= 5; i++)
 	{
 		switch(i)
 		{
 			//case 0: break;
-			case 1: printf("+\n"); break;
-			case 2: printf("-\n"); break;
-			case 3: printf("x\n"); break;
-			case 4: printf("/\n"); break;
-			default: printf("\n"); 	
-		}
-		for (y = 0; y < 9; y++)
-		{
-			printf("%d",y);
-			if (y % 3 == 0)
-			{
-				printf("\n");
-			}	
+			case 1: printf("1 2 3+\n"); break;
+			case 2: printf("4 5 6-\n"); break;
+			case 3: printf("7 8 9x\n"); break;
+			case 4: printf("  0  /\n"); break;
+			case 5: printf("Enter \n"); break;
+			default: printf("\n");
 		}
 	}
-	//the text below doesn't output everything, feelig it's the switch statement
-	scanf("Enter a character on the display above: %s", ask);
-	printf("You entered: %s\n", ask);
+	//the text below doesn't output everything, feeling it's the switch statement
+	scanf("/*Enter a character on the display above:*/%s\n", ask);
+	printf("You entered: %s\n",ask);
 	return 0;
 
 }
